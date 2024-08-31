@@ -56,20 +56,19 @@ jobs:
         fi
       working-directory: ./s3
 
-    # - name: 'Terraform Plan in s3 folder'
-    #   run: terraform plan
-    #   working-directory: ./s3
-
-    # - name: 'Terraform Apply in s3 folder'
-    #   run: terraform apply -auto-approve
-    #   working-directory: ./s3
-
-    - name: 'Terraform Destroy in s3 folder'
-      if: ${{ github.event.inputs.destroy == 'true' }}
-      run: terraform destroy -auto-approve
+    - name: 'Terraform Plan in s3 folder'
+      run: terraform plan
       working-directory: ./s3
 
-    # Repeat the same steps for the alasco folder
+    - name: 'Terraform Apply in s3 folder'
+      run: terraform apply -auto-approve
+      working-directory: ./s3
+
+    # - name: 'Terraform Destroy in s3 folder'
+    #   if: ${{ github.event.inputs.destroy == 'true' }}
+    #   run: terraform destroy -auto-approve
+    #   working-directory: ./s3
+
     - name: 'Check if backend initialized in alasco folder'
       id: alasco_backend_check
       run: |
