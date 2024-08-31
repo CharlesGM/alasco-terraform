@@ -3,6 +3,17 @@ variable "cluster_name" {
   type        = string
 }
 
+variable "cpu" {
+  type        = string
+  description = "The number of cpu units used by the task."
+  default     = "512"  # or whatever value suits your needs
+}
+
+variable "memory" {
+  type        = string
+  description = "The amount of memory (in MiB) used by the task."
+  default     = "1024"  # or whatever value suits your needs
+}
 variable "task_family" {
   description = "Family of the ECS task definition."
   type        = string

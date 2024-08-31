@@ -21,15 +21,15 @@ variable "alb_name" {
   description = "The Name of the ALB."
 }
 
-variable "execution_role_arn" {
-  description = "ARN of the ECS task execution role."
-  type        = string
-}
+# variable "execution_role_arn" {
+#   description = "ARN of the ECS task execution role."
+#   type        = string
+# }
 
-variable "task_role_arn" {
-  description = "ARN of the ECS task role."
-  type        = string
-}
+# variable "task_role_arn" {
+#   description = "ARN of the ECS task role."
+#   type        = string
+# }
 
 variable "cluster_name" {
   description = "Name of cluster."

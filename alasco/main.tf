@@ -38,15 +38,13 @@ module "ecs" {
   security_group_id  = module.security_group.id
   target_group_arn   = module.alb.target_group_arn
   service_name       = var.service_name
-  execution_role_arn = var.execution_role_arn
-  task_role_arn      = var.task_role_arn
+  execution_role_arn = module.iam_role.execution_role_arn
+  task_role_arn      = module.iam_role.task_role_arn
 }
-
 module "iam_role" {
   source = "./modules/iam_role"
   name   = "my-ecs"
 }
-
 module "alb" {
   source            = "./modules/alb"
   vpc_id            = module.vpc.vpc_id
