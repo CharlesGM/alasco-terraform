@@ -33,18 +33,38 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
-    - name: 'Terraform Init'
+    # Run Terraform commands in the s3 folder
+    - name: 'Terraform Init in s3 folder'
       run: terraform init
+      working-directory: ./s3
 
-    - name: 'Terraform Plan'
+    - name: 'Terraform Plan in s3 folder'
       run: terraform plan
+      working-directory: ./s3
 
-    - name: 'Terraform Apply'
+    - name: 'Terraform Apply in s3 folder'
       run: terraform apply -auto-approve
+      working-directory: ./s3
 
-    # - name: 'Terraform Destroy'
-    #   run: terraform destroy -auto-approve
-
-    - name: 'Terraform Destroy'
+    - name: 'Terraform Destroy in s3 folder'
       if: ${{ github.event.inputs.destroy == 'true' }}
       run: terraform destroy -auto-approve
+      working-directory: ./s3
+
+    # Run Terraform commands in the alasco folder
+    - name: 'Terraform Init in alasco folder'
+      run: terraform init
+      working-directory: ./alasco
+
+    - name: 'Terraform Plan in alasco folder'
+      run: terraform plan
+      working-directory: ./alasco
+
+    - name: 'Terraform Apply in alasco folder'
+      run: terraform apply -auto-approve
+      working-directory: ./alasco
+
+    - name: 'Terraform Destroy in alasco folder'
+      if: ${{ github.event.inputs.destroy == 'true' }}
+      run: terraform destroy -auto-approve
+      working-directory: ./alasco
