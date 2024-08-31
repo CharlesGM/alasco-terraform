@@ -16,9 +16,9 @@ on:
 
 jobs:
   terraform:
-    name: 'Terraform'
-    # runs-on: ubuntu-latest
-    runs-on: arc-runners
+    name: 'Terraform ECS Deployment Workflow'
+    runs-on: ubuntu-latest
+    # runs-on: arc-runners
     
     steps:
     - name: 'Checkout GitHub Action'
