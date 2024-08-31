@@ -6,13 +6,13 @@ variable "cluster_name" {
 variable "cpu" {
   type        = string
   description = "The number of cpu units used by the task."
-  default     = "512"  # or whatever value suits your needs
+  default     = "512"
 }
 
 variable "memory" {
   type        = string
   description = "The amount of memory (in MiB) used by the task."
-  default     = "1024"  # or whatever value suits your needs
+  default     = "1024"
 }
 variable "task_family" {
   description = "Family of the ECS task definition."

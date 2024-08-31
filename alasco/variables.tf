@@ -9,7 +9,7 @@ variable "vpc_cidr_block" {
 variable "subnet_count" {
   description = "Number of subnets to create."
   type        = number
-  default     = 2 # Adjust the default as needed
+  default     = 2
 }
 
 variable "container_image" {
@@ -20,16 +20,6 @@ variable "container_image" {
 variable "alb_name" {
   description = "The Name of the ALB."
 }
-
-# variable "execution_role_arn" {
-#   description = "ARN of the ECS task execution role."
-#   type        = string
-# }
-
-# variable "task_role_arn" {
-#   description = "ARN of the ECS task role."
-#   type        = string
-# }
 
 variable "cluster_name" {
   description = "Name of cluster."
