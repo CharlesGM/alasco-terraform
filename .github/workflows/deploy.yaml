@@ -56,13 +56,13 @@ jobs:
         fi
       working-directory: ./s3
 
-    - name: 'Terraform Plan in s3 folder'
-      run: terraform plan
-      working-directory: ./s3
+    # - name: 'Terraform Plan in s3 folder'
+    #   run: terraform plan
+    #   working-directory: ./s3
 
-    - name: 'Terraform Apply in s3 folder'
-      run: terraform apply -auto-approve
-      working-directory: ./s3
+    # - name: 'Terraform Apply in s3 folder'
+    #   run: terraform apply -auto-approve
+    #   working-directory: ./s3
 
     - name: 'Terraform Destroy in s3 folder'
       if: ${{ github.event.inputs.destroy == 'true' }}
