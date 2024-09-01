@@ -2,8 +2,9 @@ name: Terraform S3 Deploy
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'terraform.tfvars'
+      - '**/terraform.tfvars'
 
   workflow_dispatch:
     inputs:
