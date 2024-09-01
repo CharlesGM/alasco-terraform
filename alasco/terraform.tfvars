@@ -7,4 +7,8 @@ cluster_name      = "alasco-cluster"
 service_name      = "alasco-service"
 target_group_name = "alasco-target"
 task_family       = "alasco-family"
-desired_count     = "2"
+desired_count     = "4"
+
+
+
+
