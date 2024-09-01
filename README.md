@@ -60,5 +60,5 @@ The GitHub Actions workflow automates the process of building and deploying the 
 Feel free to open issues or submit pull requests if you have suggestions or improvements!
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the LICENSE file for details. \
 This version includes the necessary details about the GitHub Actions workflow trigger and the conditions for executing Terraform `destroy` actions.
