@@ -43,7 +43,7 @@ module "ecs" {
 }
 module "iam_role" {
   source = "./modules/iam_role"
-  name   = "my-ecs"
+  name   = "alasco-ecs"
 }
 module "alb" {
   source            = "./modules/alb"

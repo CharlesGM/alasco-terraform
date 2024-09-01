@@ -11,7 +11,7 @@ resource "aws_ecs_task_definition" "main" {
 
   container_definitions = jsonencode([
     {
-      name      = "ghost-container"
+      name      = "alasco-container"
       image     = var.container_image
       essential = true
       portMappings = [
@@ -42,7 +42,7 @@ resource "aws_ecs_service" "main" {
 
   load_balancer {
     target_group_arn = var.target_group_arn
-    container_name   = "ghost-container"
+    container_name   = "alasco-container"
     container_port   = 80
   }
 }
