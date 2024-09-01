@@ -16,8 +16,8 @@ resource "aws_ecs_task_definition" "main" {
       essential = true
       portMappings = [
         {
-          containerPort = 8080
-          hostPort      = 8080
+          containerPort = 80
+          hostPort      = 80
         }
       ]
     }
@@ -43,6 +43,6 @@ resource "aws_ecs_service" "main" {
   load_balancer {
     target_group_arn = var.target_group_arn
     container_name   = "alasco-container"
-    container_port   = 8080
+    container_port   = 80
   }
 }
