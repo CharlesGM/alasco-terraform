@@ -56,8 +56,8 @@ The GitHub Actions workflow automates the process of building and deploying the 
 - The GitHub Actions workflow is triggered on changes to alasco/terraform.tfvars to ensure that updates to image tags are applied automatically.
 - To trigger a destroy action, you need to set the destroy variable to true in github actions console.
 
+## Access the application
+TO access the application, use the AWS-provided DNS and append port 8080. For example: *alasco-alb-.<region>.elb.amazonaws.com:8080*
+
 ## Contributing
 Feel free to open issues or submit pull requests if you have suggestions or improvements!
-
-## License
-This version includes the necessary details about the GitHub Actions workflow trigger and the conditions for executing Terraform `destroy` actions.
