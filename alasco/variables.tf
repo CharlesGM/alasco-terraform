@@ -40,3 +40,8 @@ variable "target_group_name" {
   description = "Name of the Target Group."
   type        = string
 }
+
+variable "desired_count" {
+  description = "Number of desired ECS tasks."
+  type        = number
+}
