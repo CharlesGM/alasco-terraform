@@ -1,4 +1,4 @@
-name: Terraform ECS Deploy
+name: Terraform S3 Deploy
 
 on:
   push:
@@ -14,7 +14,7 @@ on:
 
 jobs:
   terraform:
-    name: 'Terraform ECS Deployment Workflow'
+    name: 'Terraform S3 Deployment Workflow'
     runs-on: ubuntu-latest
 
     steps:
