@@ -41,3 +41,7 @@ output "task_role_arn" {
   description = "ARN of the ECS task role."
   value       = module.iam_role.task_role_arn
 }
+
+output "alb_url" {
+  value = module.alb.alb_dns_name
+}
