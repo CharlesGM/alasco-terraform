@@ -16,5 +16,3 @@ variable "environment" {
 }
 
 
-
-

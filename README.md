@@ -31,7 +31,7 @@ This repository contains Terraform configurations for deploying an ECS cluster o
 
 1. **Clone the repository:**
 
-    git clone https://github.com/your-repo/terraform-ecs.git \
+    git clone https://github.com/CharlesGM/alasco-terraform.git \
     cd terraform-ecs
 
 
