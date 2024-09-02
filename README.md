@@ -59,8 +59,8 @@ The GitHub Actions workflow automates the process of building and deploying the 
 ### Github secrets
 - To deploy on terraform using github actions, this repo needs two secrets to be set in Github:
 
-  1. aws-access-key-id: set as AWS_ACCESS_KEY_ID and referenced in the workflow as {{ secrets.AWS_ACCESS_KEY_ID }}
-  2. aws-secret-access-key: set as AWS_SECRET_ACCESS_KEY and referenced in the workflow as ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  1. aws-access-key-id: set as *AWS_ACCESS_KEY_ID* and referenced in the workflow as {{ secrets.AWS_ACCESS_KEY_ID }}
+  2. aws-secret-access-key: set as *AWS_SECRET_ACCESS_KEY* and referenced in the workflow as ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 ## Access the application
 To access the application, use the AWS-provided DNS and append port 8080. For example: *alasco-alb-.<region>.elb.amazonaws.com:8080*
