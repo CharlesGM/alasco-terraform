@@ -48,50 +48,50 @@ resource "aws_ecs_service" "main" {
 }
 
 
-resource "aws_appautoscaling_target" "main" {
-  service_namespace  = "ecs"
-  resource_id        = "service/${aws_ecs_cluster.main.name}/${aws_ecs_service.main.name}"
-  scalable_dimension = "ecs:service:DesiredCount"
-  min_capacity       = 1
-  max_capacity       = 10
-}
+# resource "aws_appautoscaling_target" "main" {
+#   service_namespace  = "ecs"
+#   resource_id        = "service/${aws_ecs_cluster.main.name}/${aws_ecs_service.main.name}"
+#   scalable_dimension = "ecs:service:DesiredCount"
+#   min_capacity       = 1
+#   max_capacity       = 10
+# }
 
-resource "aws_appautoscaling_policy" "cpu_scaling" {
-  name               = "cpu-scaling-policy"
-  service_namespace  = "ecs"
-  resource_id        = aws_appautoscaling_target.main.resource_id
-  scalable_dimension = aws_appautoscaling_target.main.scalable_dimension
-  policy_type        = "TargetTrackingScaling"
+# resource "aws_appautoscaling_policy" "cpu_scaling" {
+#   name               = "cpu-scaling-policy"
+#   service_namespace  = "ecs"
+#   resource_id        = aws_appautoscaling_target.main.resource_id
+#   scalable_dimension = aws_appautoscaling_target.main.scalable_dimension
+#   policy_type        = "TargetTrackingScaling"
 
-  target_tracking_scaling_policy_configuration {
-    target_value       = 70.0
-    predefined_metric_specification {
-      predefined_metric_type = "ECSServiceAverageCPUUtilization"
-    }
-    scale_in_cooldown  = 300
-    scale_out_cooldown = 300
-  }
-}
+#   target_tracking_scaling_policy_configuration {
+#     target_value       = 70.0
+#     predefined_metric_specification {
+#       predefined_metric_type = "ECSServiceAverageCPUUtilization"
+#     }
+#     scale_in_cooldown  = 300
+#     scale_out_cooldown = 300
+#   }
+# }
 
-resource "aws_appautoscaling_policy" "step_scaling" {
-  name               = "step-scaling-policy"
-  service_namespace  = "ecs"
-  resource_id        = aws_appautoscaling_target.main.resource_id
-  scalable_dimension = aws_appautoscaling_target.main.scalable_dimension
-  policy_type        = "StepScaling"
+# resource "aws_appautoscaling_policy" "step_scaling" {
+#   name               = "step-scaling-policy"
+#   service_namespace  = "ecs"
+#   resource_id        = aws_appautoscaling_target.main.resource_id
+#   scalable_dimension = aws_appautoscaling_target.main.scalable_dimension
+#   policy_type        = "StepScaling"
 
-  step_scaling_policy_configuration {
-    adjustment_type = "ChangeInCapacity"
-    cooldown        = 60
+#   step_scaling_policy_configuration {
+#     adjustment_type = "ChangeInCapacity"
+#     cooldown        = 60
 
-    step_adjustment {
-      metric_interval_lower_bound = 0
-      scaling_adjustment          = 1
-    }
+#     step_adjustment {
+#       metric_interval_lower_bound = 0
+#       scaling_adjustment          = 1
+#     }
 
-    step_adjustment {
-      metric_interval_lower_bound = 50
-      scaling_adjustment          = 2
-    }
-  }
-}
+#     step_adjustment {
+#       metric_interval_lower_bound = 50
+#       scaling_adjustment          = 2
+#     }
+#   }
+# }
