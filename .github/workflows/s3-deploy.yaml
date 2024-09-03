@@ -1,10 +1,10 @@
 name: Terraform S3 Deploy
 
-on:
-  push:
-    paths:
-      - 'variables.tf'
-      - '**/variables.tf'
+# on:
+#   push:
+#     paths:
+#       - 'variables.tf'
+#       - '**/variables.tf'
 
   workflow_dispatch:
     inputs:

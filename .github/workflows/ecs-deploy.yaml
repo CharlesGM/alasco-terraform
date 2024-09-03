@@ -1,10 +1,10 @@
 name: Terraform ECS Deploy
 
-on:
-  push:
-    paths:
-      - 'terraform.tfvars'
-      - '**/terraform.tfvars'
+# on:
+#   push:
+#     paths:
+#       - 'terraform.tfvars'
+#       - '**/terraform.tfvars'
 
   workflow_dispatch:
     inputs:
