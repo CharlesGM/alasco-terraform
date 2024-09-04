@@ -51,7 +51,7 @@ To destroy the Terraform-managed infrastructure, you need to add destroy to the 
 
 ## GitHub Actions Workflow
 
-The GitHub Actions workflow automates the process of building and deploying the Docker image to ECS. It is triggered whenever the alasco/terraform.tfvars file is updated with a new image tag.
+The GitHub Actions workflow automates the process of building and deploying the Docker image to ECS. It is triggered whenever the ledgerndary/terraform.tfvars file is updated with a new image tag.
 
 - The GitHub Actions workflow is triggered on changes to ledgerndary/terraform.tfvars to ensure that updates to image tags are applied automatically.
 - To trigger a destroy action, you need to set the destroy variable to true in github actions console.
