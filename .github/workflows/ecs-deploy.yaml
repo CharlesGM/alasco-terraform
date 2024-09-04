@@ -34,8 +34,8 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
-    - name: 'Check if backend initialized in alasco folder'
-      id: alasco_backend_check
+    - name: 'Check if backend initialized in ledgerndary folder'
+      id: ledgerndary_backend_check
       run: |
         if [ -f .terraform-initialized ]; then
           echo "Backend already initialized"
@@ -43,9 +43,9 @@ jobs:
         else
           echo "backend_initialized=false" >> $GITHUB_ENV
         fi
-      working-directory: ./alasco
+      working-directory: ./ledgerndary
 
-    - name: 'Terraform Init in alasco folder'
+    - name: 'Terraform Init in ledgerndary folder'
       run: |
         if [ "$backend_initialized" = "false" ]; then
           terraform init -reconfigure
@@ -53,17 +53,17 @@ jobs:
         else
           terraform init
         fi
-      working-directory: ./alasco
+      working-directory: ./ledgerndary
 
-    - name: 'Terraform Plan in alasco folder'
+    - name: 'Terraform Plan in ledgerndary folder'
       run: terraform plan
-      working-directory: ./alasco
+      working-directory: ./ledgerndary
 
-    - name: 'Terraform Apply in alasco folder'
+    - name: 'Terraform Apply in ledgerndary folder'
       run: terraform apply -auto-approve
-      working-directory: ./alasco
+      working-directory: ./ledgerndary
 
-    - name: 'Terraform Destroy in alasco folder'
+    - name: 'Terraform Destroy in ledgerndary folder'
       if: ${{ github.event.inputs.destroy == 'true' }}
       run: terraform destroy -auto-approve
-      working-directory: ./alasco
+      working-directory: ./ledgerndary

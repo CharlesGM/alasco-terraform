@@ -1,3 +1,3 @@
-bucket_name         = "alasco-bucket"
-dynamodb_table_name = "alasco-dynamodb"
+bucket_name         = "ledgerndary-bucket"
+dynamodb_table_name = "ledgerndary-dynamodb"
 environment         = "DEV"

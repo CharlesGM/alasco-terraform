@@ -4,7 +4,7 @@ This repository contains Terraform configurations for deploying an ECS cluster o
 
 ## Directory Structure
 
-- `alasco/` - Main Terraform configuration directory.
+- `ledgerndary/` - Main Terraform configuration directory.
   - `main.tf` - Main Terraform file for setting up ECS and related resources.
   - `modules/` - Contains Terraform modules for various components.
     - `alb/` - ALB module.
@@ -31,7 +31,7 @@ This repository contains Terraform configurations for deploying an ECS cluster o
 
 1. **Clone the repository:**
 
-    git clone https://github.com/CharlesGM/alasco-terraform.git \
+    git clone https://github.com/CharlesGM/ledgerndary-color-app-terraform.git \
     cd terraform-ecs
 
 
@@ -53,7 +53,7 @@ To destroy the Terraform-managed infrastructure, you need to add destroy to the 
 
 The GitHub Actions workflow automates the process of building and deploying the Docker image to ECS. It is triggered whenever the alasco/terraform.tfvars file is updated with a new image tag.
 
-- The GitHub Actions workflow is triggered on changes to alasco/terraform.tfvars to ensure that updates to image tags are applied automatically.
+- The GitHub Actions workflow is triggered on changes to ledgerndary/terraform.tfvars to ensure that updates to image tags are applied automatically.
 - To trigger a destroy action, you need to set the destroy variable to true in github actions console.
 
 ### Github secrets
@@ -63,7 +63,7 @@ The GitHub Actions workflow automates the process of building and deploying the 
   2. aws-secret-access-key: set as *AWS_SECRET_ACCESS_KEY* and referenced in the workflow as ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 ## Access the application
-To access the application, use the AWS-provided DNS and append port 8080. For example: *alasco-alb-.<region>.elb.amazonaws.com:8080*
+To access the application, use the AWS-provided DNS and append port 8080. For example: *ledgerndary-alb-.<region>.elb.amazonaws.com:8080*
 
 ## Contributing
 Feel free to open issues or submit pull requests if you have suggestions or improvements!

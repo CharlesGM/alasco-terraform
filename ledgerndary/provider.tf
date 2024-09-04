@@ -4,8 +4,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket  = "alasco-bucket"
-    key     = "alasco-tfstate"
+    bucket  = "ledgerndary-bucket"
+    key     = "ledgerndary-tfstate"
     region  = "us-east-1"
     encrypt = true
   }
