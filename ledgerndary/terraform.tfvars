@@ -1,6 +1,6 @@
 aws_region        = "us-east-1"
 vpc_cidr_block    = "10.0.0.0/16"
-container_image = "gachango/web-colour-app:blue"
+container_image = "gachango/web-colour-app:yellow"
 subnet_count      = "2"
 alb_name          = "ledgerndary-alb"
 cluster_name      = "ledgerndary-cluster"
